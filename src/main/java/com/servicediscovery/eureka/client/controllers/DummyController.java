@@ -18,4 +18,10 @@ public class DummyController {
         String output = restTemplate.getForObject("http://user-service/hello", String.class);
         System.out.println(output);
     }
+
+    @GetMapping("/products")
+    public String doNothing(){
+        System.out.println("request recieved at product service");
+        return "Hello, From Product service";
+    }
 }
